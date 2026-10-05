@@ -1,4 +1,4 @@
-/* Himanshu Chaudhary — Lab 5 */
+/* Himanshu Chaudhary — Lab 6 */
 
 * {
     box-sizing: border-box;
@@ -16,6 +16,9 @@ header {
     background-color: #0f9488;
     color: white;
     margin-bottom: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 header h1 {
@@ -23,8 +26,13 @@ header h1 {
     margin-top: 0;
 }
 
+h1 {
+    font-size: 1.5rem;
+}
+
 #main-nav {
     display: flex;
+    flex-direction: column;
     gap: 8px;
     justify-content: center;
     background-color: #0d3b36;
@@ -34,6 +42,7 @@ header h1 {
     color: white;
     text-decoration: none;
     padding: 12px;
+    transition: background-color 0.2s ease;
 }
 
 #main-nav a:hover {
@@ -56,6 +65,22 @@ img {
     height: auto;
     display: block;
     margin-top: 16px;
+}
+
+.image-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #dc2626;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    z-index: 5;
 }
 
 table {
@@ -118,4 +143,39 @@ footer {
     background-color: #0d3b36;
     color: white;
     text-align: center;
+}
+
+/* Tablet and smaller */
+@media (max-width: 900px) {
+    main {
+        padding: 16px;
+    }
+
+    table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    th,
+    td {
+        padding: 8px 6px;
+        overflow-wrap: anywhere;
+    }
+
+    input,
+    textarea,
+    select {
+        max-width: 100%;
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 600px) {
+    #main-nav {
+        flex-direction: row;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
 }
