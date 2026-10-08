@@ -1,4 +1,4 @@
-/* Himanshu Chaudhary — Lab 6 */
+/* Himanshu Chaudhary — Lab 7 */
 
 * {
     box-sizing: border-box;
@@ -144,7 +144,10 @@ footer {
     color: white;
     text-align: center;
 }
-
+body.dark {
+    background-color: #111827;
+    color: #f1f5f9;
+}
 /* Tablet and smaller */
 @media (max-width: 900px) {
     main {
