@@ -1,5 +1,6 @@
 
-// Himanshu Chaudhary — Lab 8
+// Himanshu Chaudhary — Lab 9
+
 
 // Previous Lab — Variables, Data Types, and Operators
 const name = "Ada";
@@ -18,7 +19,7 @@ const likeCount = document.querySelector("#like-count");
 const likeMessage = document.querySelector("#like-message");
 
 
-// Lab 8 — Part 1 and Part 3: Functions and Conditionals
+// Lab 8 — Functions and Conditionals
 function updateLikeDisplay(count) {
     if (likeCount) {
         likeCount.textContent = `${count} likes`;
@@ -57,9 +58,9 @@ function createLikeCounter() {
 const counter = createLikeCounter();
 
 
-// Lab 8 — Part 4: Defensive Code
+// Lab 8 — Defensive Code
 if (likeBtn) {
-    likeBtn.addEventListener("click", function () {
+    likeBtn.addEventListener("click", function() {
         counter.increment();
     });
 } else {
@@ -71,7 +72,7 @@ if (likeBtn) {
 const themeBtn = document.querySelector("#theme-btn");
 
 if (themeBtn) {
-    themeBtn.addEventListener("click", function () {
+    themeBtn.addEventListener("click", function() {
         document.body.classList.toggle("dark");
     });
 }
@@ -84,7 +85,7 @@ const zipInput = document.getElementById("zip");
 const zipPattern = /^\d{5}$/;
 
 if (form && zipInput) {
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", function(event) {
         event.preventDefault();
 
         const isValidZip = zipPattern.test(zipInput.value);
@@ -101,14 +102,62 @@ if (form && zipInput) {
 }
 
 
-// Lab 8 — Part 2: Arrays and Loops
+// Lab 8 — Arrays and Loops
 const goals = ["HTML", "CSS", "JavaScript", "Git"];
 const goalsList = document.querySelector("#goals-list");
 
 if (goalsList) {
-    goals.forEach(function (goal) {
+    goals.forEach(function(goal) {
         const item = document.createElement("li");
         item.textContent = goal;
         goalsList.appendChild(item);
     });
+}
+
+
+ // Lab 9 — Part 2: Promises
+ function getGreetingAfterDelay() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve("Hello from the future!");
+        }, 800);
+    });
+}
+
+
+ // Lab 9 — Part 3: Async/Await
+ async function showGreeting() {
+    const message = await getGreetingAfterDelay();
+    console.log(message);
+}
+
+showGreeting();
+
+
+// Lab 9 — Part 4: Fetch API
+const factBtn = document.querySelector("#fact-btn");
+const factDisplay = document.querySelector("#fact-display");
+
+async function loadFact() {
+    factDisplay.textContent = "Loading...";
+
+    try {
+        const response = await fetch("https://catfact.ninja/fact");
+
+        if (!response.ok) {
+            throw new Error("Server responded with an error");
+        }
+
+        const data = await response.json();
+        factDisplay.textContent = data.fact;
+
+    } catch (error) {
+        factDisplay.textContent =
+            "Couldn't load a fact right now. Try again.";
+        console.error(error);
+    }
+}
+
+if (factBtn && factDisplay) {
+    factBtn.addEventListener("click", loadFact);
 }
