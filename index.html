@@ -1,4 +1,5 @@
-<!-- Himanshu Chaudhary — Lab 9 -->
+
+<!-- Himanshu Chaudhary — Lab 10 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,16 +29,23 @@
     <main>
 
         <p>This page was updated using a Git feature branch.</p>
-        
+
         <button id="like-btn">Like this page</button>
         <p id="like-count">0 likes</p>
         <p id="like-message"></p>
-        
+
         <button id="theme-btn">Toggle dark mode</button>
 
         <h2>Random Cat Fact</h2>
         <button id="fact-btn">Get a Random Fact</button>
-        <p id="fact-display">Click the button to fetch a fact.</p>
+        <p id="fact-display">
+            Click the button to fetch a fact.
+        </p>
+
+        <!-- Lab 10 — Geolocation API -->
+        <h2>My Location</h2>
+        <button id="location-btn">Share My Location</button>
+        <p id="location-display"></p>
 
         <p>
             This is my webpage for Web Development I.
@@ -46,16 +54,17 @@
         <h2>About This Page</h2>
 
         <p>
-            This page demonstrates some of the HTML and CSS skills I am learning this semester.
+            This page demonstrates some of the HTML and CSS
+            skills I am learning this semester.
         </p>
-
 
         <h2>My Learning Goals</h2>
         <ul id="goals-list"></ul>
 
         <p>
             One website I find useful for learning web development is
-            <a href="https://developer.mozilla.org/" target="_blank">
+            <a href="https://developer.mozilla.org/"
+               target="_blank">
                 MDN Web Docs
             </a>.
         </p>
@@ -65,7 +74,6 @@
                 src="images.jpeg"
                 alt="Illinois Institute of Technology campus sign"
             >
-        
             <span class="badge">New</span>
         </div>
 
@@ -74,7 +82,6 @@
             <h2>My Course Schedule</h2>
 
             <table>
-
                 <caption>My Weekly Course Schedule</caption>
 
                 <thead>
@@ -86,7 +93,6 @@
                 </thead>
 
                 <tbody>
-
                     <tr>
                         <td>2</td>
                         <td>HTML Basics</td>
@@ -104,7 +110,6 @@
                         <td>Advanced HTML</td>
                         <td>Tables and Forms</td>
                     </tr>
-
                 </tbody>
 
             </table>
@@ -118,7 +123,6 @@
             <form>
 
                 <label for="name">Name</label>
-
                 <input
                     type="text"
                     id="name"
@@ -127,7 +131,6 @@
                 >
 
                 <label for="email">Email</label>
-
                 <input
                     type="email"
                     id="email"
@@ -136,27 +139,19 @@
                 >
 
                 <label for="msg">Message</label>
-
-                <textarea
-                    id="msg"
-                    name="msg"
-                ></textarea>
+                <textarea id="msg" name="msg"></textarea>
 
                 <label for="referral">
                     How did you find this page?
                 </label>
 
-                <select
-                    id="referral"
-                    name="referral"
-                >
+                <select id="referral" name="referral">
                     <option value="search">Search Engine</option>
                     <option value="social">Social Media</option>
                     <option value="friend">A Friend</option>
                 </select>
 
                 <label for="zip">ZIP Code</label>
-
                 <input
                     type="text"
                     id="zip"
@@ -165,9 +160,7 @@
                     required
                 >
 
-                <button type="submit">
-                    Send
-                </button>
+                <button type="submit">Send</button>
 
             </form>
 
@@ -182,5 +175,4 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>
